@@ -34,7 +34,12 @@ body {
     margin-right: auto;
 }
 
-.navbar-links li a{
+.nav-link {
+    color: rgb(182, 204, 255);
+    text-decoration: underline;
+}
+
+.navbar-links li a:not(.nav-link){
     color: white;
     text-decoration: none;
 }
@@ -87,9 +92,9 @@ body {
     margin-left: auto;
     margin-right: auto;
     color: white;
-    width: 30vw;
-    min-width: max-content;
+    width: 50vw;
     text-align: center;
+    word-wrap: break-word;
 }
 
 .warning-bad {
@@ -116,6 +121,10 @@ body {
 
 @media (max-device-width: 650px), (max-width: 650px){
     .verbholder {
+        width: 90vw;
+    }
+
+    .warning {
         width: 90vw;
     }
 }
