@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block title %}ITD Irregular Verbs{% endblock %}
+
+{% block content %}
+{% for warning in warnings %}
+    <div class="warning warning-{{ warning.2 }}"><strong>{{ warning.0 }}</strong>{{ warning.1 }}</div>
+{% endfor %}
+<div class="center-wrap">
+    <form action="/add" method="post">
+        {% csrf_token %}
+        <input class="input form-control" type="text" name="infinitive" placeholder="Nedoločnik" autofocus>
+        <input class="input form-control" type="text" name="before" placeholder="Predbeseda" style="margin-top: 5px;">
+        <input class="input form-control" type="text" name="FrstPrsnPast" placeholder="Preteklik" style="margin-top: 5px;">
+        <button class="btn btn-primary" type="submit" style="margin-top: 5px;">Dodaj</button>
+    </form>
+</div>
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block title %}ITD Irregular Verbs{% endblock %}
+
+{% block content %}
+    <div class="main-wrap">
+        {% for verb in verbs %}
+        <div class="verbholder">
+            <div class="inf"><strong>{{ verb.0 }}</strong></div>
+            <div class="result">
+                <div>{{ verb.2 }}&nbsp<strong>{{ verb.1 }}</strong></div>
+            </div>
+        </div>
+    {% endfor %}
+    </div>
+{% endblock %}

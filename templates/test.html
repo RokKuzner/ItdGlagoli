@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block title %}ITD Irregular Verbs{% endblock %}
+
+{% block content %}
+{% for warning in warnings %}
+    <div class="warning warning-{{ warning.3 }}"><strong>{{ warning.0 }}</strong>{{ warning.1 }} <strong>{{ warning.2 }}</strong></div>
+{% endfor %}
+<div class="center-wrap">
+    <form action="/test" method="post">
+        {% csrf_token %}
+        <input type="hidden" name="verb" value="{{ verb.0 }}">
+        <div class="test">
+            <div style="margin-right: 10px;"><strong>{{ verb.0 }}</strong></div>
+            <div class="test-res">
+                <input class="input form-control" type="text" name="response" placeholder="ho fatto" autofocus autocomplete="off">
+            </div>
+        </div>
+        <div class="test-btn-holder">
+            <button class="btn btn-primary" type="submit">Check</button>
+            <button class="btn btn-secondary" type="button" onclick="window.location.reload()">Next</button>
+        </div>
+    </form>
+</div>
+{% endblock %}
